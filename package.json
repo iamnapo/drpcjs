@@ -1,0 +1,42 @@
+{
+  "name": "drpcjs",
+  "version": "0.1.0",
+  "description": "Apache storm DRPC client for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": "github:iamnapo/drpcjs",
+  "author": {
+    "name": "Napoleon Oikonomou",
+    "email": "Napoleonoikon@gmail.com",
+    "url": "https://iamnapo.me"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamnapo/drpcjs/issues"
+  },
+  "homepage": "https://github.com/iamnapo/drpcjs#readme",
+  "engines": {
+    "node": ">=10"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-iamnapo": "^1.0.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1"
+  },
+  "dependencies": {
+    "node-int64": "^0.4.0"
+  },
+  "keywords": [
+    "drpc",
+    "node-drpc",
+    "storm-node",
+    "drpcjs",
+    "storm"
+  ]
+}
