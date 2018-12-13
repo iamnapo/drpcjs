@@ -3,7 +3,6 @@ const { EventEmitter } = require('events');
 const thrift = require('./src/thrift');
 const DistributedRPC = require('./src/thrift-gen-nodejs/DistributedRPC');
 
-
 class DRPC extends EventEmitter {
   constructor({ host, port = 3772, timeout = null, keepAlive = true, maxConnectCounts = 10 }) {
     super();
@@ -27,8 +26,11 @@ class DRPC extends EventEmitter {
     const self = this;
     let connection;
     const maxCounts = this.maxConnectCounts;
-    if (!this.timeout) connection = thrift.createConnection(this.host, this.port);
-    else connection = thrift.createConnection(this.host, this.port, this.timeout);
+    if (!this.timeout) {
+      connection = thrift.createConnection(this.host, this.port);
+    } else {
+      connection = thrift.createConnection(this.host, this.port, this.timeout);
+    }
     if (maxCounts > 0) {
       this.connectCounts += 1;
       if (this.connectCounts > maxCounts) throw new Error('Maximum connect counts limit.');
@@ -49,15 +51,14 @@ class DRPC extends EventEmitter {
     return this;
   }
 
-  execute(...args) {
-    const [spoutName, emitValue] = args;
-    if (args.length !== 2 || typeof args[0] !== 'string' || typeof args[1] !== 'string') {
-      throw new Error('Param `spoutName[String]` and `emitValue[String]` required.');
+  execute(spoutName, emitValue) {
+    if (typeof spoutName !== 'string' || typeof emitValue !== 'string') {
+      throw new Error('Params `spoutName[String]` and `emitValue[String]` required.');
     }
     return new Promise((yes, no) => {
       const self = this;
       if (!this.keepAlive) this.connect();
-      if (!this.client) throw new Error('DRPC client is not exists.');
+      if (!this.client) throw new Error('DRPC client does not exist.');
       this.client.execute(spoutName, emitValue, (err, res) => {
         if (err) {
           no(err);
