@@ -11,15 +11,14 @@
 $ npm i drpcjs
 ```
 
-### Usage
+## Usage
 
 ```javascript
-const drpcjs = require('drpcjs');
-
-const drpc = new DRPC(options);
+const Drpcjs = require('drpcjs');
+const drpc = new Drpcjs(options);
 ```
 
-#### **options**
+### **options**
 
 - `host`: drpc cluster hostname
 - `port`: drpc client port, default to 3772
@@ -28,24 +27,26 @@ const drpc = new DRPC(options);
 - `maxConnectCounts`: the maximum connect counts, if the param `keepAlive` is
   set true, client will reconnect to storm until the connect counts exceed the maxConnectCounts.
 
-#### **Events**
+### **events**
 
 - `error`
 - `close`
 - `connect`
 - `timeout`
 
-#### **Methods**
+### **methods**
 
-- execute(topologyName, JSON.stringify(args))
+```javascript
+execute(topologyName, JSON.stringify(args))
+```
 
-### Example
+## Example
 
 ```javascript
 const drpcjs = require('drpcjs');
-const drpc = drpcjs({ host: '127.0.0.1' });
+const drpc = new drpcjs({ host: '127.0.0.1' });
 
-drpc.execute('reach', 'engineering.twitter.com/blog/5').then(res => console.log(res)).catch(console.error);
+drpc.execute('reach', JSON.stringify({ a: 'a', b: 7, c: true }).then(res => console.log(res)).catch(console.error);
 ```
 
 ## License
