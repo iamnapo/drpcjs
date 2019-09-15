@@ -2,12 +2,12 @@
 
 > Apache storm DRPC client for Node.js
 
-[![npm](https://flat.badgen.net/npm/v/drpcjs)](https://www.npmjs.com/package/drpcjs)
-[![license](https://flat.badgen.net/github/license/iamnapo/drpcjs)](./LICENSE)
+[![npm](https://img.shields.io/npm/v/drpcjs.svg?style=for-the-badge&logo=npm&label=)](https://www.npmjs.com/package/drpcjs)
+[![license](https://img.shields.io/github/license/iamnapo/drpcjs.svg?style=for-the-badge)](./LICENSE)
 
 ## Install
 
-```bash
+```console
 $ npm i drpcjs
 ```
 
@@ -46,7 +46,7 @@ execute(topologyName, JSON.stringify(args))
 const drpcjs = require('drpcjs');
 const drpc = new drpcjs({ host: '127.0.0.1' });
 
-drpc.execute('reach', JSON.stringify({ a: 'a', b: 7, c: true }).then(res => console.log(res)).catch(console.error);
+drpc.execute('reach', JSON.stringify({ a: 'a', b: 7, c: true }).then(console.log).catch(console.error);
 ```
 
 ## License

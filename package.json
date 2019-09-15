@@ -2,41 +2,43 @@
   "name": "drpcjs",
   "version": "0.1.0",
   "description": "Apache storm DRPC client for Node.js",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
+  "keywords": [
+    "drpc",
+    "drpcjs",
+    "node-drpc",
+    "storm",
+    "storm-node"
+  ],
+  "homepage": "https://github.com/iamnapo/drpcjs#readme",
+  "bugs": {
+    "url": "https://github.com/iamnapo/drpcjs/issues"
   },
   "repository": "github:iamnapo/drpcjs",
+  "license": "MIT",
   "author": {
     "name": "Napoleon Oikonomou",
     "email": "Napoleonoikon@gmail.com",
     "url": "https://iamnapo.me"
   },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/iamnapo/drpcjs/issues"
-  },
-  "homepage": "https://github.com/iamnapo/drpcjs#readme",
-  "engines": {
-    "node": ">=10"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.12.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-iamnapo": "^1.0.1",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.12.3"
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node index.js",
+    "test": "npm test"
   },
   "dependencies": {
     "node-int64": "^0.4.0"
   },
-  "keywords": [
-    "drpc",
-    "node-drpc",
-    "storm-node",
-    "drpcjs",
-    "storm"
-  ]
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-iamnapo": "^1.3.3",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=10"
+  }
 }
