@@ -20,6 +20,10 @@
     "email": "Napoleonoikon@gmail.com",
     "url": "https://iamnapo.me"
   },
+  "files": [
+    "index.js",
+    "src"
+  ],
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
