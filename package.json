@@ -28,7 +28,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node index.js",
-    "test": "npm test"
+    "test": "npm run lint"
   },
   "dependencies": {
     "node-int64": "^0.4.0"
