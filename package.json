@@ -1,48 +1,48 @@
 {
-  "name": "drpcjs",
-  "version": "1.0.0",
-  "description": "Apache storm DRPC client for Node.js",
-  "keywords": [
-    "drpc",
-    "drpcjs",
-    "node-drpc",
-    "storm",
-    "storm-node"
-  ],
-  "homepage": "https://github.com/iamnapo/drpcjs#readme",
-  "bugs": {
-    "url": "https://github.com/iamnapo/drpcjs/issues"
-  },
-  "repository": "github:iamnapo/drpcjs",
-  "license": "MIT",
-  "author": {
-    "name": "Napoleon Oikonomou",
-    "email": "Napoleonoikon@gmail.com",
-    "url": "https://iamnapo.me"
-  },
-  "files": [
-    "index.js",
-    "src"
-  ],
-  "main": "index.js",
-  "scripts": {
-    "lint": "eslint .",
-    "start": "node index.js",
-    "test": "npm run lint"
-  },
-  "dependencies": {
-    "node-int64": "^0.4.0"
-  },
-  "devDependencies": {
-    "eslint": "^6.4.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-iamnapo": "^1.3.3",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^2.0.1"
-  },
-  "engines": {
-    "node": ">=10"
-  }
+	"name": "drpcjs",
+	"version": "1.0.0",
+	"description": "Apache storm DRPC client for Node.js",
+	"keywords": [
+		"drpc",
+		"drpcjs",
+		"node-drpc",
+		"storm",
+		"storm-node"
+	],
+	"homepage": "https://github.com/iamnapo/drpcjs#readme",
+	"bugs": {
+		"url": "https://github.com/iamnapo/drpcjs/issues"
+	},
+	"repository": "github:iamnapo/drpcjs",
+	"license": "MIT",
+	"author": {
+		"name": "Napoleon Oikonomou",
+		"email": "Napoleonoikon@gmail.com",
+		"url": "https://iamnapo.me"
+	},
+	"files": [
+		"index.js",
+		"src"
+	],
+	"main": "index.js",
+	"scripts": {
+		"lint": "eslint .",
+		"start": "node index.js",
+		"test": "npm run lint"
+	},
+	"dependencies": {
+		"node-int64": "^0.4.0"
+	},
+	"devDependencies": {
+		"eslint": "^6.8.0",
+		"eslint-config-airbnb": "^18.0.1",
+		"eslint-config-iamnapo": "^2.1.1",
+		"eslint-plugin-import": "^2.20.0",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-react": "^7.18.0",
+		"eslint-plugin-react-hooks": "^2.3.0"
+	},
+	"engines": {
+		"node": ">=10"
+	}
 }

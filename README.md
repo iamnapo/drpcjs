@@ -14,7 +14,7 @@ $ npm i drpcjs
 ## Usage
 
 ```javascript
-const Drpcjs = require('drpcjs');
+const Drpcjs = require("drpcjs");
 const drpc = new Drpcjs(options);
 ```
 
@@ -37,7 +37,7 @@ const drpc = new Drpcjs(options);
 ### **methods**
 
 ```javascript
-execute(topologyName, JSON.stringify(args))
+execute(topologyName, JSON.stringify(args));
 ```
 
 ## Example
