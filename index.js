@@ -53,7 +53,7 @@ class DRPC extends EventEmitter {
 
 	execute(spoutName, emitValue) {
 		if (typeof spoutName !== "string" || typeof emitValue !== "string") {
-			throw new Error("Params `spoutName[String]` and `emitValue[String]` required.");
+			throw new TypeError("Params `spoutName[String]` and `emitValue[String]` required.");
 		}
 		return new Promise((yes, no) => {
 			const self = this;

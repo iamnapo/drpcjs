@@ -2,7 +2,7 @@
 
 > Apache storm DRPC client for Node.js
 
-[![npm](https://img.shields.io/npm/v/drpcjs.svg?style=for-the-badge&logo=npm&label=)](https://www.npmjs.com/package/drpcjs)
+[![build](https://img.shields.io/github/workflow/status/iamnapo/drpcjs/ci?style=for-the-badge&logo=github&label=)](https://github.com/iamnapo/drpcjs/actions) [![npm](https://img.shields.io/npm/v/drpcjs.svg?style=for-the-badge&logo=npm&label=)](https://www.npmjs.com/package/drpcjs)
 [![license](https://img.shields.io/github/license/iamnapo/drpcjs.svg?style=for-the-badge)](./LICENSE)
 
 ## Install
@@ -48,12 +48,6 @@ const drpc = new drpcjs({ host: '127.0.0.1' });
 
 drpc.execute('reach', JSON.stringify({ a: 'a', b: 7, c: true }).then(console.log).catch(console.error);
 ```
-
-## License
-
-MIT © [Napoleon-Christos Oikonomou](https://iamnapo.me)
-
----
 
 ## Acknowledgements
 
