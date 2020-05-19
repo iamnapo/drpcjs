@@ -1,6 +1,6 @@
 {
 	"name": "drpcjs",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"description": "Apache storm DRPC client for Node.js",
 	"keywords": [
 		"drpc",
