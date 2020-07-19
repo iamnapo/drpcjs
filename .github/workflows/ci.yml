@@ -1,17 +1,9 @@
 name: ci
 
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    paths-ignore:
-      - "*.md"
-      - "docs/**"
-      - "media/**"
+on: push
+
 jobs:
   ci:
-    name: Install & Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,5 +12,3 @@ jobs:
           node-version: 14
       - run: yarn
       - run: yarn test
-        env:
-          CI: true
