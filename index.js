@@ -23,27 +23,23 @@ class DRPC extends EventEmitter {
 	}
 
 	connect() {
-		const self = this;
-		let connection;
 		const maxCounts = this.maxConnectCounts;
-		if (!this.timeout) {
-			connection = thrift.createConnection(this.host, this.port);
-		} else {
-			connection = thrift.createConnection(this.host, this.port, this.timeout);
-		}
+		const connection = this.timeout
+			? thrift.createConnection(this.host, this.port, this.timeout)
+			: thrift.createConnection(this.host, this.port);
 		if (maxCounts > 0) {
 			this.connectCounts += 1;
 			if (this.connectCounts > maxCounts) throw new Error("Maximum connect counts limit.");
 		}
 
-		connection.on("connect", () => self.emit("connect"));
-		connection.on("timeout", () => self.emit("timeout"));
-		connection.on("error", (err) => self.emit("error", err));
+		connection.on("connect", () => this.emit("connect"));
+		connection.on("timeout", () => this.emit("timeout"));
+		connection.on("error", (err) => this.emit("error", err));
 
-		if (self.keepAlive) {
+		if (this.keepAlive) {
 			connection.on("close", () => {
-				self.emit("close");
-				self.connect();
+				this.emit("close");
+				this.connect();
 			});
 		}
 		this.connection = connection;
@@ -56,7 +52,6 @@ class DRPC extends EventEmitter {
 			throw new TypeError("Params `spoutName[String]` and `emitValue[String]` required.");
 		}
 		return new Promise((yes, no) => {
-			const self = this;
 			if (!this.keepAlive) this.connect();
 			if (!this.client) throw new Error("DRPC client does not exist.");
 			this.client.execute(spoutName, emitValue, (err, res) => {
@@ -65,10 +60,10 @@ class DRPC extends EventEmitter {
 				} else {
 					yes(res);
 				}
-				if (!self.keepAlive && self.connection) {
-					self.connection.end();
-					self.connection = null;
-					self.client = null;
+				if (!this.keepAlive && this.connection) {
+					this.connection.end();
+					this.connection = null;
+					this.client = null;
 				}
 			});
 		});

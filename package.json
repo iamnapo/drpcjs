@@ -28,16 +28,22 @@
 	"scripts": {
 		"lint": "eslint . --cache",
 		"start": "node index.js",
-		"test": "yarn lint"
+		"test": "npm run lint"
+	},
+	"eslintConfig": {
+		"extends": "iamnapo",
+		"rules": {
+			"unicorn/prefer-module": "off"
+		}
 	},
 	"dependencies": {
 		"node-int64": "^0.4.0"
 	},
 	"devDependencies": {
-		"eslint": "^7.5.0",
-		"eslint-config-iamnapo": "^6.0.3",
-		"eslint-plugin-import": "^2.22.0",
-		"eslint-plugin-unicorn": "^21.0.0"
+		"eslint": "^7.26.0",
+		"eslint-config-iamnapo": "^15.0.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-unicorn": "^32.0.1"
 	},
 	"engines": {
 		"node": ">=12"
